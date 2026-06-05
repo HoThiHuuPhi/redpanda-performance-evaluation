@@ -29,11 +29,11 @@ The second scenario introduces bursty traffic and degraded inter-broker network 
 ### 3. Reliability vs Performance Comparison
 The project compares acknowledgment modes to evaluate the trade-off between higher durability (`acks=all`) and lower write latency (`acks=1`).
 
-## Metrics
-- Throughput
-- Average latency
-- Tail latency (high-percentile latency)
-- Consumer lag / backlog
+## Included Artifacts
+- Final report in `report/final-report.pdf`
+- Original benchmark scripts in `scripts/windows-batch/`
+- Raw result files grouped by scenario in `results/raw/`
+- Repository notes for configs, figures, and future reproducibility material
 
 ## Repository Structure
 ```text
@@ -42,8 +42,12 @@ The project compares acknowledgment modes to evaluate the trade-off between high
 |-- report/
 |   `-- final-report.pdf
 |-- scripts/
+|   |-- README.md
+|   `-- windows-batch/
 |-- configs/
 |-- results/
+|   |-- README.md
+|   `-- raw/
 `-- images/
 ```
 
@@ -51,13 +55,10 @@ The project compares acknowledgment modes to evaluate the trade-off between high
 - Built and configured a multi-node Redpanda cluster for controlled benchmarking
 - Designed repeatable test scenarios for progressive load and burst traffic
 - Measured the effect of replication and network impairment on performance
-- Analyzed the trade-off between reliability settings and observed latency/throughput
-
-## Report
-The full academic report is available at [report/final-report.pdf](report/final-report.pdf).
+- Preserved the original scripts and raw outputs used in the academic evaluation
 
 ## Technologies
-Redpanda, Ubuntu, VMware, Kafka CLI, Linux networking tools, distributed systems performance evaluation
+Redpanda, Ubuntu, VMware, Kafka CLI, Windows batch scripting, Linux networking tools, distributed systems performance evaluation
 
 ## Notes
-This repository currently contains the final report and project structure. Configuration files, scripts, benchmark outputs, and supporting images can be added incrementally to improve reproducibility.
+The repository now includes the original execution artifacts used in the project. Additional sanitized broker configuration files and charts can be added later to further improve reproducibility and presentation quality.

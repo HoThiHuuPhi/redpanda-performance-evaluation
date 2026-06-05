@@ -1,18 +1,16 @@
-﻿# Experiment Scripts
+﻿# Script Inventory
 
-This directory is reserved for automation scripts used to execute benchmark scenarios and supporting checks.
+This directory now contains the original Windows batch files used to run the Redpanda performance evaluation.
 
-## Expected Scripts
-- gradual load benchmark script
-- burst traffic benchmark script
-- consumer lag monitoring script
-- network impairment script using `tc netem`
-
-## Suggested Naming
-- `scenario1-gradual-load.sh`
-- `scenario2-burst-traffic.sh`
-- `lag-monitor.sh`
-- `apply-netem.sh`
+## Included Scripts
+- `run_kb1.bat`: step-load benchmark for Scenario 1
+- `script3_1kb_kneepoint.bat`: repeated measurements around the 1KB knee point
+- `script5_kb2_start_consumer.bat`: starts the consumer used in Scenario 2
+- `script6_kb2_monitor_lag.bat`: monitors consumer lag during burst tests
+- `script7_kb2_burst_no_netem_acks1.bat`: burst test without network impairment, `acks=1`
+- `script8_kb2_burst_no_netem_acksall.bat`: burst test without network impairment, `acks=all`
+- `script9_kb2_burst_netem_acks1.bat`: burst test with network impairment, `acks=1`
+- `script10_kb2_burst_netem_acksall.bat`: burst test with network impairment, `acks=all`
 
 ## Notes
-The report describes scenarios for progressive load increase, burst traffic, and degraded network conditions. Scripts placed here should follow those experiment definitions.
+The scripts were executed from a Windows host using Kafka CLI tools against the Redpanda cluster.
